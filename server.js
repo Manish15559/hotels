@@ -13,6 +13,7 @@
 const express = require('express')
 const app = express()
 const db=require('./db')
+require('dotenv').config();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());  //req.body
 
@@ -60,7 +61,7 @@ app.use('/menuItem',menuItem);
 
 
 
-
+const PORT=process.env.PORT || 3000;
 app.listen(3000,()=>{
     console.log('lisgening on port 3000');
 })
